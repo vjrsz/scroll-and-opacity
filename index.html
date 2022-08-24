@@ -85,7 +85,7 @@
 		<div class="os__wrapper">
 			<div class="os__text-container">
 				<p class="os__text-item">This Is</p>
-				<p id="elementId" class="os__text-item">TEXTOO</p>
+				<p id="elementId" class="os__text-item">TEXTOO DESTAQUE</p>
 				<p class="os__text-item">
 					<img src="1.jpg" alt="And Image" height="200" />
 				</p>
@@ -103,16 +103,5 @@
 	</body>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-	<script>
-        $(document).scroll(function(){
-            el = $("#elementId")[0];
-
-            if ( el.getBoundingClientRect().top < window.innerHeight/2){
-				el.classList.add("blur");
-
-            }else{
-				el.classList.remove("blur");
-            }
-        })
-	</script>
+	<script src="./scroll_and_opacity.js"></script>
 </html>
