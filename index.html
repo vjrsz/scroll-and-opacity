@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			body,
+			html {
+				width: 100%;
+				height: 100%;
+				background-color: #000;
+			}
+
+			ul {
+				list-style: none;
+			}
+			li {
+				font-size: 32px;
+				color: #fff;
+			}
+			.blur {
+				color: #fff !important;
+			}
+			.os__wrapper {
+				display: block;
+			}
+			.os__text-container {
+				text-align: center;
+				position: -webkit-sticky;
+				position: sticky;
+				padding: 0 1rem;
+				display: flex;
+				flex-direction: column;
+				gap: 0.5rem;
+			}
+			.os__text-item {
+				color: hotpink;
+				font-size: 3rem;
+				text-transform: uppercase;
+				font-family: sans-serif;
+				font-weight: 600;
+				opacity: 0.2;
+			}
+			.os__text-item--on {
+				opacity: 1;
+			}
+			.os__ghost {
+				height: var(--ghost-height);
+			}
+			.last {
+				padding-top: 400vh;
+			}
+			@keyframes bounce {
+				from {
+					transform: translateY(0px);
+				}
+				to {
+					transform: translateY(0.5rem);
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<!--<div style="height: 150%"></div>-->
+		<div class="os__wrapper">
+			<div class="os__text-container">
+				<p class="os__text-item">This Is</p>
+				<p class="os__text-item">Text</p>
+				<p class="os__text-item">
+					<img src="1.jpg" alt="And Image" height="200" />
+				</p>
+			</div>
+		</div>
+		<div class="os__wrapper">
+			<div class="os__text-container">
+				<p class="os__text-item">This Is</p>
+				<p class="os__text-item">Text</p>
+				<p class="os__text-item">
+					<img src="1.jpg" alt="And Image" height="200" />
+				</p>
+			</div>
+		</div>
+		<div class="os__wrapper">
+			<div class="os__text-container">
+				<p class="os__text-item">This Is</p>
+				<p id="elementId" class="os__text-item">TEXTOO</p>
+				<p class="os__text-item">
+					<img src="1.jpg" alt="And Image" height="200" />
+				</p>
+			</div>
+		</div>
+		<div class="os__wrapper">
+			<div class="os__text-container">
+				<p class="os__text-item">This Is</p>
+				<p class="os__text-item">Text</p>
+				<p class="os__text-item">
+					<img src="1.jpg" alt="And Image" height="200" />
+				</p>
+			</div>
+		</div>
+	</body>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script>
+        $(document).scroll(function(){
+            el = $("#elementId")[0];
+
+            if ( el.getBoundingClientRect().top < window.innerHeight/2){
+				el.classList.add("blur");
+
+            }else{
+				el.classList.remove("blur");
+            }
+        })
+	</script>
+</html>
